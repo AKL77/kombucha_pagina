@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dona Kombucha | Kombuchas Artesanais</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Reset & Variáveis */
+        :root {
+            --verde-primario: #2e7d32;
+            --verde-claro: #e8f5e9;
+            --laranja: #ff9800;
+            --laranja-escuro: #e65100;
+            --branco: #ffffff;
+            --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --borda-arredondada: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: var(--branco);
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--verde-primario);
+        }
+        
+        /* Header Hero */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('horizontal_resized.png');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--branco);
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        .btn-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--laranja);
+            color: var(--branco);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: var(--sombra);
+            border: 2px solid transparent;
+        }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+        }
+        
+        .btn-instagram {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        /* Seções */
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Sobre */
+        #sobre {
+            background-color: var(--verde-claro);
+        }
+        
+        .sobre-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .sobre-text {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+        }
+        
+        .sobre-img {
+            flex: 1;
+            max-width: 400px;
+            border-radius: var(--borda-arredondada);
+            overflow: hidden;
+            box-shadow: var(--sombra);
+        }
+        
+        .sobre-img img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+        
+        .sobre-img:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Sabores */
+        #sabores {
+            background-color: var(--branco);
+        }
+        
+        .sabores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .sabor-card {
+            background: var(--branco);
+            border-radius: var(--borda-arredondada);
+            overflow: hidden;
+            box-shadow: var(--sombra);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+        
+        .sabor-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .sabor-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+        
+        .sabor-info {
+            padding: 20px;
+        }
+        
+        /* Chamada para ação após sabores */
+        .cta-sabores {
+            margin-top: 40px;
+            padding: 30px;
+            background-color: var(--verde-claro);
+            border-radius: var(--borda-arredondada);
+        }
+        
+        /* História */
+        #historia {
+            background-color: var(--verde-claro);
+        }
+        
+        .historia-header {
+            margin-bottom: 30px;
+        }
+        
+        .historia-img-container {
+            margin: 30px auto;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid var(--branco);
+            box-shadow: var(--sombra);
+        }
+        
+        .historia-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .historia-text {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        /* Onde nos encontrar */
+        #encontrar {
+            background-color: var(--branco);
+        }
+        
+        .mapa-container {
+            margin-top: 30px;
+            border-radius: var(--borda-arredondada);
+            overflow: hidden;
+            box-shadow: var(--sombra);
+        }
+        
+        .mapa-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+        
+        /* Rodapé */
+        footer {
+            background-color: var(--verde-primario);
+            color: var(--branco);
+            padding: 50px 20px;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--branco);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .whatsapp-link {
+            background-color: #25D366;
+        }
+        
+        .instagram-link {
+            background: linear-gradient(45deg, #405DE6, #833AB4, #C13584, #E1306C, #FD1D1D);
+        }
+        
+        .facebook-link {
+            background-color: #3b5998;
+        }
+        
+        /* Animações */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .sobre-content {
+                flex-direction: column;
+            }
+            
+            .sobre-text {
+                text-align: center;
+            }
+            
+            .historia-img-container {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Dona Kombucha</h1>
+        <p>Kombuchas artesanais feitas com ingredientes 100% naturais</p>
+        <div class="btn-container">
+            <a href="https://wa.me/5551993119156" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> Pedir pelo WhatsApp
+            </a>
+            <a href="https://www.instagram.com/donakombuchamarlikist/?hl=pt-br" class="btn btn-instagram">
+                <i class="fab fa-instagram"></i> Pedir pelo Instagram
+            </a>
+        </div>
+    </header>
+
+    <!-- Sobre -->
+    <section id="sobre">
+        <div class="container">
+            <h2>O Que É Kombucha?</h2>
+            <div class="sobre-content">
+                <div class="sobre-text">
+                    <p>Kombucha é uma bebida fermentada, probiótica e refrescante, feita a partir de chá adoçado. Rica em benefícios para a digestão e imunidade, nossa versão é 100% natural, sem conservantes ou aditivos artificiais.</p>
+                    <p>Nossas kombuchas são fermentadas lentamente para garantir o máximo de sabor e benefícios à saúde. Cada garrafa é produzida artesanalmente com ingredientes selecionados e muito cuidado.</p>
+                </div>
+                <div class="sobre-img">
+                    <img src="img_processo.webp" alt="Processo de fermentação da kombucha">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sabores -->
+    <section id="sabores">
+        <div class="container">
+            <h2>Sabores mais pedidos</h2>
+            <p>Experimente nossas combinações exclusivas</p>
+            <div class="sabores-grid">
+                <div class="sabor-card">
+                    <img src="k1.jpg" alt="Gengibre e Limão" class="sabor-img">
+                    <div class="sabor-info">
+                        <h3>Gengibre & Limão</h3>
+                        <p>Mauris ac lacus eget purus sagittis tristique. Maecenas at auctor metus.</p>
+                    </div>
+                </div>
+                <div class="sabor-card">
+                    <img src="k2.jpg" alt="Morango e Hibisco" class="sabor-img">
+                    <div class="sabor-info">
+                        <h3>Uva Branca</h3>
+                        <p>Proin quis libero et magna egestas sollicitudin. Aenean vel interdum arcu. </p>
+                    </div>
+                </div>
+                <div class="sabor-card">
+                    <img src="k3.jpg" alt="Maçã e Canela" class="sabor-img">
+                    <div class="sabor-info">
+                        <h3>Pitaya</h3>
+                        <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta-sabores">
+                <h3>Quer ver nossa lista completa de sabores?</h3>
+                <p>Acesse nosso Instagram ou chame no WhatsApp para conhecer todos os nossos sabores disponíveis!</p>
+                <div class="btn-container" style="justify-content: center; margin-top: 20px;">
+                    <a href="https://www.instagram.com/donakombuchamarlikist/?hl=pt-br" class="btn btn-instagram">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                    <a href="https://wa.me/5551993119156" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- História -->
+    <section id="historia">
+        <div class="container">
+            <div class="historia-header">
+                <h2>Nossa História</h2>
+                <div class="historia-img-container">
+                    <img src="rotulo.jpg" alt="Marli Kist, fundadora da Dona Kombucha">
+                </div>
+            </div>
+            <div class="historia-text">
+                <p>Pellentesque sit amet sollicitudin magna, ut interdum lorem. Sed velit enim, tristique sed lobortis at, aliquam sit amet nulla. Aenean ut cursus ex. Nunc vel placerat nibh. Cras malesuada quam ut purus varius, in pulvinar enim semper. Vivamus fermentum lectus vel metus fringilla, sed interdum lorem molestie. Proin nec elementum risus. Nunc scelerisque lacus ac tristique sagittis.</p>
+                <p>Aenean et diam ut diam ornare finibus et vel turpis. Maecenas luctus lobortis leo, a tempus quam dictum ut. Sed condimentum condimentum nisi, ac suscipit sapien varius sed. Aenean laoreet quis ipsum a congue. Nulla sodales tristique ullamcorper.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Onde nos encontrar -->
+    <section id="encontrar">
+        <div class="container">
+            <h2>Onde Nos Encontrar</h2>
+            <p>Venha conhecer nossos produtos pessoalmente</p>
+            
+            <div class="mapa-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3468.6250329257923!2d-52.196381624767916!3d-29.61458471147582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951c9002557cef87%3A0x88c04b67eb9f25dc!2sR.%20Osvaldo%20Aranha%2C%201631%20-%20Centro%2C%20Ven%C3%A2ncio%20Aires%20-%20RS%2C%2095800-000!5e0!3m2!1sen!2sbr!4v1746126286608!5m2!1sen!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            
+            <p style="margin-top: 20px; font-weight: bold;">Endereço: Rua Osvaldo Aranha, 1631 - Centro - Venâncio Aires/RS</p>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <h2>Dona Kombucha</h2>
+            <p>Kombuchas artesanais feitas com amor</p>
+            
+            <div class="social-links">
+                <a href="https://www.instagram.com/donakombuchamarlikist/?hl=pt-br" class="social-link instagram-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/marli.kist?locale=pt_BR" class="social-link facebook-link">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://wa.me/5551993119156" class="social-link whatsapp-link">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+            
+            <p>Entre em contato para encomendas ou dúvidas</p>
+            <p>© 2025 Dona Kombucha. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Efeito de aparecimento suave ao rolar
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+                section.style.opacity = '0';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                section.style.transform = 'translateY(20px)';
+            });
+        });
+    </script>
+</body>
+</html>
